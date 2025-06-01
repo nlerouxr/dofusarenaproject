@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  character: one
+  game: one
+  current_hp: 1
+  current_action_points: 1
+  current_movement_points: 1
+
+two:
+  user: two
+  character: two
+  game: two
+  current_hp: 1
+  current_action_points: 1
+  current_movement_points: 1
