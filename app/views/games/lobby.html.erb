@@ -1,0 +1,26 @@
+<body class="lobby">
+  <div class="container mt-5">
+    <div class="container mb-4 pt-2">
+    <div class="row align-items-center">
+      <div class="col-3"></div>
+      <div class="col-6 text-center">
+        <h1> Listes des parties en attente</h1>
+      </div>
+      <div class="col-3 text-center">
+        <h3>Créer une partie</h3>
+        <div class="d-flex flex-column align-items-center form">
+          <%= simple_form_for :game, url: games_path do |f| %>
+          <%= f.input :selected_user_id, label: "Utilisateur", collection: @users, label_method: :username, value_method: :id, input_html: { class: 'form-control' } %>
+          <%= f.submit "Créer une partie", class: "btn btn-primary mx-auto d-block" %>
+        <% end %>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+    <% @games.each do |game| %>
+  <p>Partie de  <%= game.players.first.user.username  %></p>
+  <% end %>
+  </div>
+</body>

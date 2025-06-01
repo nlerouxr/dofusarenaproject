@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
 
-  STATUS = %w[pending in_progress finished]
+  STATUS = %w[pending full in_progress finished]
 
   has_many :players
   has_many :users, through: :players

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_01_102329) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_01_161056) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.integer "health_point"
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_01_102329) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "pending"
     t.integer "current_turn"
     t.datetime "timer_started_at"
     t.integer "winner_id"
