@@ -1,0 +1,10 @@
+<h1>Connexion</h1>
+
+<%= simple_form_for :session, url: login_path, html: { method: :post } do |f| %>
+  <%= f.input :username, label: 'username:' %> 
+  <%= f.input :password, label: 'password:' %> 
+  <%= f.button :submit, 'Se connecter', class:"btn btn-primary" %>
+<% end %>
+
+<p>Pas encore inscrit?</p>
+<%= link_to "Inscrivez-vous", signup_path, class:"btn btn-primary" %>   
