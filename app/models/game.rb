@@ -10,4 +10,5 @@ class Game < ApplicationRecord
   belongs_to :current_player_turn, class_name: "Player", optional: true
 
   validates :status, presence: true, inclusion: { in: STATUS }
+
 end

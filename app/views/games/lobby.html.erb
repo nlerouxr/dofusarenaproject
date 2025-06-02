@@ -20,7 +20,7 @@
   </div>
 
     <% @games.each do |game| %>
-  <p>Partie de  <%= game.players.first.user.username  %></p>
+  <p>Partie de  <%= game.players.first.user.username  %> <%= game.status %> <%=  button_to 'Rejoindre', join_game_path(game), methode: :post %></p>
   <% end %>
   </div>
 </body>
