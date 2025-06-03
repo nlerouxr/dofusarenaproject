@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get "games/lobby", to: "games#lobby", as: "lobby"
   resources :games, only: [:create, :show]
 
-
   post "games/:id/join", to: "games#join", as: "join_game"
 
   get "up" => "rails/health#show", as: :rails_health_check
