@@ -1,16 +1,23 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-    get "games/lobby", to: "games#lobby", as: "lobby"
-    resources :games, only: [:create, :show]
+  root "users#new"
+  get "games/lobby", to: "games#lobby", as: "lobby"
+  resources :games, only: [:create, :show]
 
 
-    post "games/:id/join", to: "games#join", as: "join_game"
+  post "games/:id/join", to: "games#join", as: "join_game"
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  resources :users, only: [:show, :index, :create]
 
+  post "/signup", to: "users#create", as: :signup
+  get "/signup", to: "users#new", as: :new_user
+  get "/login", to: "sessions#new", as: :new_login
+
+  post "/login", to: "sessions#create", as: :login
+
+  delete "/logout", to: "sessions#destroy", as: :logout
+
+  get "/me", to: "users#show_me", as: :me
 end
