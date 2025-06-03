@@ -2,7 +2,7 @@ class Game < ApplicationRecord
 
   STATUS = %w[pending full in_progress finished]
 
-  has_many :players
+  has_many :players, dependent: :destroy
   has_many :users, through: :players
   has_many :characters, through: :players
 
